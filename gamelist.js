@@ -31,7 +31,7 @@ app.post('/create', (req, res) => {
     if (gameIds[gameId]) return res.status(409).json({ error: 'gameId already exists' });
 
     console.log('Creating game with gameId:', gameId);
-    const timeout = setTimeout(() => removeGameId(gameId), 30 * 60 * 1000);
+    const timeout = setTimeout(() => removeGameId(gameId), 12 * 60 * 1000);
     gameIds[gameId] = {
         playerCount: 1,
         timeout,
